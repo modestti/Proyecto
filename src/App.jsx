@@ -11,17 +11,21 @@ function App() {
   return (
     <>
       <Router>
-        <CartProvider>
-          <div>
-            <Header />
-            <Routes>
-              <Route path='/' element={<ItemListContainer /> } />
-              <Route path="detail/:id" element={<ItemDetailContainer />} />
-              <Route path='category/:categoryId' element={<ItemListContainer />} />
-            </Routes>
-            <Footer />
-          </div>
-        </CartProvider>
+        <div className="app">
+          <CartProvider>
+            <div>
+              <Header />
+              <main className='main-content'>
+                <Routes>
+                  <Route path='/' element={<ItemListContainer />} />
+                  <Route path="detail/:id" element={<ItemDetailContainer />} />
+                  <Route path='category/:categoryId' element={<ItemListContainer />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </CartProvider>
+        </div>
       </Router>
     </>
   )
