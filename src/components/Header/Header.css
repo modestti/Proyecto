@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa logo/título de la nav */
+  background-color: #1f252b; /* tono oscuro para combinar con el fondo */
+  padding: 10px 40px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: sticky; /* se mantiene arriba al hacer scroll */
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; /* hace el logo redondo */
+  object-fit: cover;
+}
+
+.header h2 {
+  flex-grow: 1; /* ocupa el espacio entre logo y nav */
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
