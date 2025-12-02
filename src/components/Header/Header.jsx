@@ -5,7 +5,7 @@ import "./Header.css"
 export const Header = () => {
     return (
     <header className="header">
-        <img className="logo" src="images/logo-panaderia.jpg" alt="Logo de la panaderia Delicias de Leo" />
+        <img className="logo" src="./logo-panaderia.jpg" alt="Logo de la panaderia Delicias de Leo" />
         <Link to={"/"}>Delicias de Leo</Link>
         <Nav />
     </header>

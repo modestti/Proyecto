@@ -32,10 +32,10 @@ export const ProductFormUI = ({ product, errors, loading, onChange, onFileChange
                         <div className="file-input-wrapper">
                             <label className="file-label">
                                 Subir imagen
-                                <input type="file" name="image" onChange={(e) => onFileChange(e.target.files?.[0] ?? null)} accept="image/*" required />
+                                <input type="file" name="image" onChange={(e) => onFileChange(e.target.files?.[0] ?? null)} accept="image/*"/>
                             </label>
                         </div>
-                        {errors.imageFile && <p className="error">{errors.imageFile}</p>}
+                        {errors.file && <p className="error">{errors.file}</p>}
                     </div>
                 </div>
                 {errors.general && <div className="alert alert--danger">{errors.general}</div>}

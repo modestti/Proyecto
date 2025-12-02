@@ -17,8 +17,8 @@ export const validateProduct = (product,fileRequired=true) => {
         errors.description = "La descripción es obligatoria";
     }
 
-    if(fileRequired && !product.imageFile){
-        errors.imageFile = "La imagen es obligatoria";
+    if(fileRequired && !product.file){
+        errors.file = "La imagen es obligatoria";
     }
 
     return errors;

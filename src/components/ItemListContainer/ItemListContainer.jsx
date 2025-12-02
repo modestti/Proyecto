@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
+import { getProducts } from "../../services/productsServices";
 
 export const ItemListContainer = ({title}) => {
 
@@ -10,28 +11,15 @@ export const ItemListContainer = ({title}) => {
     const {categoryId} = useParams();
 
     useEffect(() => {
-        fetch("/data/products.json").then((res)=> {
-            if(!res.ok){
-                throw new Error("Error en la llamada")
-            }
-            return res.json();
-        }).then((data)=>{
+        getProducts(categoryId)
+        .then((data) => {
             setProducts(data);
-        }).catch((err)=> {
-            console.log(err);
+            setFilteredProducts(data);
+        })
+        .catch((error) => {
+            console.error("Error al obtener los productos:", error);
         });
-    }, []);
-
-    useEffect(() => {
-        if (categoryId) {
-            const filtered = products.filter(
-            (prod) => prod.category === categoryId
-            );
-            setFilteredProducts(filtered);
-        } else {
-        setFilteredProducts(products);
-        }
-    }, [categoryId, products]);
+    }, [categoryId]);
         
     return (
         <section className="item-list-container">
